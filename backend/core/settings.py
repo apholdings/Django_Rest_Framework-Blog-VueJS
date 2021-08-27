@@ -27,6 +27,8 @@ INSTALLED_APPS = [
 
     'core',
 
+    'blog',
+
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
