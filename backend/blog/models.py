@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
+
+
 def user_directory_path(instance, filename):
     return 'blog/{0}/{1}'.format(instance.title, filename)
 
@@ -35,3 +37,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_thumbnail(self):
+        if self.thumbnail:
+            return 'http://127.0.0.1:8000' + self.thumbnail.url
+        return ''
+

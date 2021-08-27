@@ -14,7 +14,9 @@
       </div>
       <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
         <div v-for="posts in APIData" :key="posts.id" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+        <router-link :to="{ name: 'BlogPost', params: { id: posts.id, title: posts.title, thumbnail: posts.thumbnail, slug: posts.slug, excerpt: posts.excerpt, content: posts.content}}">
         <p>{{ posts.title }}</p>
+        </router-link>
         {{ posts.content }}
         </div>
       </div>
